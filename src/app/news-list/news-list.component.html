@@ -1,0 +1,13 @@
+<app-news-editor
+    (onAdd)="addItem($event)">
+</app-news-editor>
+
+<app-news-item
+    [title]="it"
+    *ngFor="let it of news; let i=index"
+    (onRemove)="removeItem(i)">
+</app-news-item>
+
+<div *ngIf="news.length > 5">
+    <button>wiecej</button>
+</div>

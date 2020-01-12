@@ -1,0 +1,9 @@
+<label>
+    Tytul:
+    <input type="text"
+        [(ngModel)]="createdTitle" />
+</label>
+<button
+    (click)="addNews()" [disabled]="!createdTitle">
+    dodaj
+</button>
