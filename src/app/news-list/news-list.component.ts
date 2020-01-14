@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export class NewsData {
-  public id: number;
-  public title: string;
-  public imageSrc: string;
-  public content: string;
-}
+import { NewsData } from '../news-data';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-news-list',
@@ -13,17 +8,23 @@ export class NewsData {
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent implements OnInit {
-  private news: string[];
+  private news: NewsData[];
+
+  constructor(
+    private newsService: NewsService
+  ) { }
 
   ngOnInit() {
+    this.loadNews();
+
+    this.newsService.onChange.subscribe(() => this.loadNews());
+  }
+
+  loadNews() {
     this.news = [];
-  }
 
-  removeItem(index: number) {
-    this.news.splice(index, 1);
-  }
-
-  addItem(title: string) {
-    this.news.push(title);
+    setTimeout(() => {
+      this.news = this.newsService.getNewsList();
+    }, 500);
   }
 }

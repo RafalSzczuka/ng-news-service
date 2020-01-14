@@ -6,13 +6,15 @@ import { NewsListComponent } from './news-list/news-list.component';
 import { NewsItemComponent } from './news-item/news-item.component';
 import { NewsEditorComponent } from './news-editor/news-editor.component';
 import { FormsModule } from '@angular/forms';
+import { NewsRefreshComponent } from './news-refresh/news-refresh.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsListComponent,
     NewsItemComponent,
-    NewsEditorComponent
+    NewsEditorComponent,
+    NewsRefreshComponent
   ],
   imports: [
     BrowserModule,

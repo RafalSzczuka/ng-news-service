@@ -1,6 +1,7 @@
 import {
   Component, OnInit, EventEmitter, Output
 } from '@angular/core';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-news-editor',
@@ -10,8 +11,9 @@ import {
 export class NewsEditorComponent implements OnInit {
   createdTitle: string;
 
-  @Output()
-  onAdd = new EventEmitter<string>();
+  constructor(
+    private newsService: NewsService
+  ) { }
 
   ngOnInit() {
     this.createdTitle = '';
@@ -19,7 +21,7 @@ export class NewsEditorComponent implements OnInit {
 
   addNews() {
     if(this.createdTitle) {
-      this.onAdd.emit(this.createdTitle);
+      this.newsService.addItem(this.createdTitle);
       // this.createdTitle = '';
     }
   }
