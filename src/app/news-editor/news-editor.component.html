@@ -1,9 +1,36 @@
-<label>
-    Tytul:
-    <input type="text"
-        [(ngModel)]="createdTitle" />
-</label>
-<button
-    (click)="addNews()" [disabled]="!createdTitle">
-    dodaj
-</button>
+<div class="jumbotron">
+  <div class="container">
+    <h2 class="display-4">Add news</h2>
+    <p class="lead" style="color: gray;">
+      To add news enter a title, image url and text content (all data required)
+    </p>
+
+    <div>
+      <label>
+        News title:
+        <input type="text" [(ngModel)]="createdTitle" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Image Url:
+        <input type="text" [(ngModel)]="addedUrl" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Text content:
+        <textarea class="textarea" [(ngModel)]="addedContent"></textarea>
+      </label>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary btn-lg"
+      style="margin-top: 10px;"
+      (click)="addNews()"
+      [disabled]="!createdTitle || !addedUrl || !addedContent"
+    >
+      Add news
+    </button>
+  </div>
+</div>

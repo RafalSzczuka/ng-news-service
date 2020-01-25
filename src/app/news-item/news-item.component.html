@@ -1,8 +1,29 @@
 <div class="news-item">
-    <h3>{{news.title}}</h3>
+  <div class="left-column">
     <img [src]="news.imageUrl" />
-    <button (click)="remove()">
-        usun
+    <button
+      type="button"
+      class="btn btn-danger btn-sm"
+      style="margin-top: 5px;"
+      (click)="remove()"
+    >
+      Delete news
     </button>
-    <div class="clear"></div>
+  </div>
+
+  <div class="content">
+    <div>
+      <h3 class="text-content">{{ news.title }}</h3>
+      <p class="text-content">{{ news.content }}</p>
+    </div>
+  </div>
+
+  <div class="votes">
+    <h4>Votes</h4>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-success" (click)="plus()">+</button>
+      <button type="button" class="btn btn-danger" (click)="minus()">-</button>
+    </div>
+    <h4>{{ news.id }}</h4>
+  </div>
 </div>

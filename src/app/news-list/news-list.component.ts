@@ -1,22 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { NewsData } from '../news-data';
-import { NewsService } from '../news.service';
+import { Component, OnInit } from "@angular/core";
+import { NewsData } from "../news-data";
+import { NewsService } from "../news.service";
 
 @Component({
-  selector: 'app-news-list',
-  templateUrl: './news-list.component.html',
-  styleUrls: ['./news-list.component.css']
+  selector: "app-news-list",
+  templateUrl: "./news-list.component.html",
+  styleUrls: ["./news-list.component.css"]
 })
 export class NewsListComponent implements OnInit {
   private news: NewsData[];
 
-  constructor(
-    private newsService: NewsService
-  ) { }
+  constructor(private newsService: NewsService) {}
 
   ngOnInit() {
     this.loadNews();
-
     this.newsService.onChange.subscribe(() => this.loadNews());
   }
 
@@ -25,6 +22,6 @@ export class NewsListComponent implements OnInit {
 
     setTimeout(() => {
       this.news = this.newsService.getNewsList();
-    }, 500);
+    }, 100);
   }
 }

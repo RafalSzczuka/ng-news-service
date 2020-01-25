@@ -1,9 +1,7 @@
 <app-news-item
-    [news]="it"
-    [index]="i"
-    *ngFor="let it of news; let i=index">
+  [news]="it"
+  [index]="i"
+  *ngFor="let it of news; let i = index"
+  [ngClass]="{ odd: i % 2 == 0, even: i % 2 != 0 }"
+>
 </app-news-item>
-
-<div *ngIf="news.length > 5">
-    <button>wiecej</button>
-</div>

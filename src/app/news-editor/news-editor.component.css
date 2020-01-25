@@ -1,0 +1,11 @@
+textarea {
+  resize: none;
+  min-height: 8vh;
+  min-width: 50vw;
+  display: block;
+}
+
+input {
+  min-width: 50vw;
+  display: block;
+}
