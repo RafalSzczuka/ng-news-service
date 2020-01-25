@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NewsService } from "../news.service";
 
 @Component({
@@ -7,7 +7,6 @@ import { NewsService } from "../news.service";
   styleUrls: ["./news-editor.component.css"]
 })
 export class NewsEditorComponent implements OnInit {
-  @ViewChild("myForm", null) formValues;
   createdTitle: string;
   addedUrl: string;
   addedContent: string;
@@ -30,7 +29,6 @@ export class NewsEditorComponent implements OnInit {
         this.addedContent,
         this.addedId
       );
-      this.formValues.resetForm();
     }
   }
 }
