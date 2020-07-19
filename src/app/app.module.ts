@@ -6,6 +6,7 @@ import { NewsListComponent } from "./news-list/news-list.component";
 import { NewsItemComponent } from "./news-item/news-item.component";
 import { NewsEditorComponent } from "./news-editor/news-editor.component";
 import { FormsModule } from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { FormsModule } from "@angular/forms";
     NewsItemComponent,
     NewsEditorComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
